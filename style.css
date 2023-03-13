@@ -1,0 +1,151 @@
+:root {
+    --main-bg-color: #323341;
+    --main-text-color: #21655a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: var(--main-bg-color);
+    position: relative;
+    transition: all ease 0.2s;
+}
+
+.clock {
+    min-height: 18em;
+    min-width: 18em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-bg-color);
+    background-image: url("Image/clockImage.png");
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    border: 6px solid #312118;
+    background-color: #212627;
+    transition: all ease 0.2s;
+    animation: scale 2s ease infinite ;
+}
+@keyframes scale {
+    0% {
+        transform: scale(1.0);
+    }
+    50%{
+        transform: scale(1.1);
+         box-shadow: 3px 3px 10px rgb(54, 12, 12),-3px -3px 10px black;
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.clock:before {
+    content: "";
+    height: 0.75rem;
+    width: 0.75rem;
+    background-color: var(--main-text-color);
+    border: 2px solid var(--main-bg-color);
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1000;
+    transition: all ease 0.2s;
+}
+
+.hour,
+.min,
+.sec {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.hour {
+    height: 9em;
+    width: 9em;
+}
+
+.hour:before {
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 6px;
+    background-color: var(--main-text-color);
+    border-radius: 20px;
+}
+
+.min {
+    height: 11em;
+    width: 11em;
+}
+
+.min:before {
+    content: "";
+    height: 50%;
+    width: 4px;
+    background-color: var(--main-text-color);
+    border-radius: 4px;
+}
+
+.sec {
+    height: 13em;
+    width: 13em;
+}
+
+.sec:before {
+    content: "";
+    height: 60%;
+    width: 1px;
+    background-color: #922c8f;
+    border-radius: 2px;
+}
+.text-1{
+    z-index: 1;
+    color: #8b8787;
+    position: absolute;
+    /* bottom: 2rem; */
+    /* top: 2rem; */
+    top: 19rem;
+
+}
+.text-2{
+    color: #8b8787;
+    position: absolute;
+    /* bottom: 2rem; */
+    /* top: 2rem; */
+    bottom: 19rem;
+}
+.logo{
+    position: absolute;
+    /* bottom: 23rem; */
+    top: 19rem;
+    animation: rotate 2s ease infinite;
+}
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+         /* box-shadow: 3px 3px 10px rgb(54, 12, 12),-3px -3px 10px black; */
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+} 
+@media (max-width:480){
+    .clock{
+        height: 15em;
+        width: 15em;
+    }
+}    
